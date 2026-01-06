@@ -32,16 +32,19 @@ Alur sistem secara umum adalah sebagai berikut:
 ## 🗂️ Struktur Direktori
 Struktur repositori mengikuti ketentuan penilaian dan **tidak diubah secara substansial**:
 
+Struktur repositori mengikuti ketentuan penilaian dan tidak diubah secara substansial:
+
 bigdata-final-project/
-├── etl_pipeline/ # Script pipeline ETL (Python)
-├── elt_pipeline/ # Script pipeline ELT (SQL / Python)
-├── raw/ # Data mentah dari masing-masing sumber
-├── datalake/ # Penyimpanan raw data terpusat
-├── warehouse/ # Data warehouse (SQLite)
-├── dashboard/ # Dataset CSV untuk Looker Studio
-├── logs/ # Log proses ETL & ELT
-├── architecture/ # Diagram arsitektur sistem
+├── etl_pipeline/        # Script pipeline ETL (Python)
+├── elt_pipeline/        # Script pipeline ELT (SQL / Python)
+├── raw/                 # Data mentah dari masing-masing sumber
+├── datalake/            # Penyimpanan raw data terpusat
+├── warehouse/           # Data warehouse (SQLite)
+├── dashboard/           # Dataset CSV untuk Looker Studio
+├── logs/                # Log proses ETL & ELT
+├── architecture/        # Diagram arsitektur sistem
 └── README.md
+
 
 
 ---
