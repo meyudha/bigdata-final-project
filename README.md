@@ -32,8 +32,7 @@ Alur sistem secara umum adalah sebagai berikut:
 ## 🗂️ Struktur Direktori
 Struktur repositori mengikuti ketentuan penilaian dan **tidak diubah secara substansial**:
 
-Struktur repositori mengikuti ketentuan penilaian dan tidak diubah secara substansial:
-
+```text
 bigdata-final-project/
 ├── etl_pipeline/        # Script pipeline ETL (Python)
 ├── elt_pipeline/        # Script pipeline ELT (SQL / Python)
@@ -44,15 +43,3 @@ bigdata-final-project/
 ├── logs/                # Log proses ETL & ELT
 ├── architecture/        # Diagram arsitektur sistem
 └── README.md
-
-
-
----
-
-## ▶️ Cara Menjalankan Pipeline
-
-### 1️⃣ Menjalankan Pipeline ETL
-Pipeline ETL digunakan untuk menghasilkan data bersih dan siap analisis.
-
-```bash
-python etl_pipeline/run_etl.py
