@@ -1,49 +1,34 @@
 # Pipeline Logs
 
-Folder **logs** berisi catatan (log) eksekusi pipeline ETL dan ELT
-yang dihasilkan secara otomatis oleh masing-masing script.
+Folder **logs** digunakan untuk mendokumentasikan proses eksekusi
+pipeline ETL dan ELT pada proyek ini.
 
-Log **tidak dibuat secara terpusat**, melainkan dicatat langsung
-pada setiap tahap proses (extract, load, atau transform) di dalam
-kode Python maupun SQL yang dijalankan.
+Pada implementasi ini, proses logging **tidak disimpan dalam file terpisah**,
+melainkan **ditampilkan langsung pada output eksekusi (console / notebook)**
+melalui perintah `print()` pada masing-masing tahap pipeline.
 
 ---
 
 ## 🧾 Mekanisme Logging
 
-Proses logging dilakukan sebagai berikut:
-- Setiap script ETL dan ELT mencatat informasi prosesnya sendiri
-- Log disimpan dalam format CSV
-- Penulisan log dilakukan secara append (berurutan sesuai eksekusi)
+Informasi log dicetak secara langsung saat pipeline dijalankan,
+terutama pada tahap:
+- Extract data dari Kaggle
+- Extract data dari Hugging Face
+- Load data ke warehouse
 
-Pendekatan ini dipilih agar setiap tahap pipeline memiliki
-catatan eksekusi yang jelas dan terpisah.
-
----
-
-## 📁 Struktur Log
-
-- **logs/etl/**  
-  Berisi log proses ETL, seperti:
-  - extract data dari Kaggle
-  - extract data dari Hugging Face
-
-- **logs/elt/**  
-  Berisi log proses ELT, seperti:
-  - load data mentah ke warehouse
-  - transformasi berbasis SQL (jika dicatat)
-
----
-
-## 📌 Informasi yang Dicatat
-
-Setiap log mencakup informasi penting, antara lain:
-- Sumber data atau proses
+Informasi yang ditampilkan meliputi:
+- Sumber data
 - Jumlah baris dan kolom
 - Ukuran data
 - Waktu eksekusi
-- Timestamp proses
 
-Log ini digunakan sebagai bukti bahwa pipeline
-dijalankan secara terstruktur dan terdokumentasi.
+Output log ini digunakan sebagai bukti bahwa setiap tahap pipeline
+berhasil dijalankan dan dapat diamati secara langsung.
 
+---
+
+## 📌 Catatan
+
+Pendekatan logging ini dipilih untuk menjaga kesederhanaan implementasi
+serta menyesuaikan dengan lingkungan pengembangan berbasis notebook.
