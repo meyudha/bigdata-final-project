@@ -1,20 +1,21 @@
 import pandas as pd
 import os
+import shutil
 from datetime import datetime
 
 def extract_source1():
     """
-    Extract data mentah dari CSV Kaggle.
-    File CSV diambil dari Google Drive dan sudah disalin ke folder raw/kaggle.
-    Tidak dilakukan preprocessing atau cleaning.
+    Extract data mentah dari Kaggle CSV (via Google Drive).
+    Tidak ada preprocessing atau cleaning.
     """
 
     start_time = datetime.now()
     source_name = "Kaggle CSV (Google Drive)"
 
-    file_path = "raw/kaggle/games.csv"
+    # Path file
+    file_path = "raw/etl/kaggle/games.csv"
 
-    # READ ONLY (NO TRANSFORM)
+    # READ ONLY
     df_raw = pd.read_csv(file_path)
 
     exec_time = (datetime.now() - start_time).total_seconds()
@@ -30,6 +31,7 @@ def extract_source1():
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     }
 
+    # Simpan log extract
     os.makedirs("logs/etl", exist_ok=True)
     pd.DataFrame([log]).to_csv(
         "logs/etl/extract_log.csv",
@@ -38,7 +40,7 @@ def extract_source1():
         index=False
     )
 
-    print("=== Extract Source 1 (Kaggle CSV) Selesai ===")
+    print("=== Extract Source 1 (CSV) Selesai ===")
     print(f"Baris  : {df_raw.shape[0]:,}")
     print(f"Kolom  : {df_raw.shape[1]}")
     print(f"Ukuran : {file_size_mb} MB")
